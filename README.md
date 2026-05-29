@@ -1,4 +1,4 @@
-# An optimal transport-based low-dimensional visualization framework for high-parameter flow cytometry
+# CARGO (Cytometry Analysis via Regularized Graph Optimal-transport): An optimal transport-based low-dimensional visualization framework for high-parameter flow cytometry
 
 ## Overview
 This paper provides a comprehensive framework for analyzing and visualizing high-parameter flow cytometry data, and demonstrates the methodology using a **Malignant Peritoneal Mesothelioma (MPM) immunotherapy dataset**, primarily. The main dataset consists of PBMC samples collected from 14 patients at three time points: baseline (before vaccination), after the first vaccine, and after the third vaccine. The dataset was collected under six panels, of which three T-cell panels (Co-inhibition, Co-stimulation, Cytokine) are the primary focus of analysis in this paper.
@@ -9,9 +9,9 @@ The paper implements a **low-dimensional visualization framework based on optima
 
 ## Data Details
 
-The data files are available [here](https://doi.org/10.5281/zenodo.17279841). Downloading the zip folder and extracting it under the `FlowSink/` directory should work with the relative paths in the code files.
+The data files are available [here](https://doi.org/10.5281/zenodo.17279841). Downloading the zip folder and extracting it under the `CARGO/` directory should work with the relative paths in the code files.
 
-### 1. Raw Data (`FlowSink/Data/Raw Data`)
+### 1. Raw Data (`CARGO/Data/Raw Data`)
 - The primary data in `.fcs` format are provided by the original study authors. 
 - The `.fcs` files are preprocessed in R using several Bioconductor packages (`PeacoQC`, `flowCore`, `CytoNorm2.0`) for margin event removal, compensation, transformation, scaling, and quality control. The `.fcs` files are stored after every step of the preprocessing pipeline.
 - Important metadata files (`_cell_type.xlsx`) are stored in each panel subfolder under `Normalized Data`, that contain:
@@ -30,7 +30,7 @@ The data files are available [here](https://doi.org/10.5281/zenodo.17279841). Do
   - Cytokine: `PD1, TBET, IL-10, TNF-a, IL2, IFN-y`
 - Cell type assignment is semi-automated, guided by expert manual gating. Outlier cells labeled as `"Other cell"` are excluded during experiments.
 
-### 2. Data for Downstream Tasks (`FlowSink/Data/Malignant Peritoneal Mesothelioma Final Dataset`)
+### 2. Data for Downstream Tasks (`CARGO/Data/Malignant Peritoneal Mesothelioma Final Dataset`)
 - Files are stored as `.xlsx` in separate folders for the three T-cell panels (`Co-inhibition`, `Co-stimulation`, `Cytokine`) and for three time points (`TP1`, `TP2`, `TP3`).
 
 ### 3. Metadata
